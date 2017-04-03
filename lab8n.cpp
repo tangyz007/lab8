@@ -17,25 +17,25 @@ class Message {
 		virtual void printInfo(void);
 		
 		Message();// default Constructors
-		Message(string m);
+		Message(string m); // parametric Constructors
 		
 		~Message(); //Destructor
 };
 
 Message::Message() { 
-	// Empty constructor ask user for input:
-	cout << "Enter a message: ";
+	
+	cout << "Enter a message: ";// Empty constructor ask user for input:
 	cin >> msg;
 }
 
 Message::Message(string m) {
-	// Get user input from command line args
-	msg = m;
+	
+	msg = m;// Get user input from command line arguments
 }
 
 void Message::printInfo(void) {
-	// Print message string to stdout
-	cout << "Original text: " << msg << endl;
+	
+	cout << "Original text: " << msg << endl; 
 	cout << endl;
 }
 
@@ -50,13 +50,11 @@ class morseCodeMessage : public Message {
 		void translate();
 	public:
 
-
-		// Override virtual:
-		void printInfo();
-		// Constructor
-		morseCodeMessage();
-		// Destructor
-		~morseCodeMessage();
+		void printInfo();// Constructor
+		
+		morseCodeMessage();// Constructor
+		
+		~morseCodeMessage();// Destructor
 };
 
 morseCodeMessage::morseCodeMessage() {
@@ -165,9 +163,9 @@ void messageStack::push(Message *m) {
 int main(int argc, char **argv) {
 
 	if(argc > 1) 
-	{
-		// Print the msg without translation
-		// This is just to demonstrate the base class functionality
+	{// base class demonstratration
+		
+		
 		Message m1 = Message(argv[1]);
 		m1.printInfo();
 
